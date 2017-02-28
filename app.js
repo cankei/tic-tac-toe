@@ -1,51 +1,56 @@
-angular.module('ticTacToeApp', [])
-  .controller('TicTacToeController', function () {
-    var ticTacToe = this;
+angular.module('ticTacToeApp', []).controller('TicTacToeController', function (TicTacToeBoardService) {
+  var ticTacToe = this;
 
-    ticTacToe.reset = function () {
-      ticTacToe.board = [
-        [
-          {value: 'X'},
-          {value: 'X'},
-          {value: 'X'}
-        ],
-        [
-          {value: 'X'},
-          {value: 'X'},
-          {value: 'X'}
-        ],
-        [
-          {value: 'X'},
-          {value: 'X'},
-          {value: 'X'}
-        ]
+  var PLAYERS = {
+    0: 'X',
+    1: 'O'
+  };
+
+  TicTacToeBoardService.reset();
+  ticTacToe.board = TicTacToeBoardService.board;
+  ticTacToe.placeAt = TicTacToeBoardService.placeAt;
+
+  ticTacToe.getCurrentPlayer = function () {
+    return PLAYERS[TicTacToeBoardService.totalPlacedCells % 2];
+  };
+}).factory('TicTacToeBoardService', function () {
+  var self = this;
+  var TOTAL_CELLS = 9;
+  self.board = [];
+  self.totalPlacedCells = 0;
+
+  self.reset = function () {
+    self.totalPlacedCells = 0;
+    self.board = [
+      [
+        {value: ''},
+        {value: ''},
+        {value: ''}
+      ],
+      [
+        {value: ''},
+        {value: ''},
+        {value: ''}
+      ],
+      [
+        {value: ''},
+        {value: ''},
+        {value: ''}
       ]
-    };
+    ]
+  };
 
-    ticTacToe.reset();
+  self.isEnded = function () {
+    return self.totalPlacedCells >= TOTAL_CELLS;
+  };
 
-    // todoList.todos = [
-    //   {text:'learn AngularJS', done:true},
-    //   {text:'build an AngularJS app', done:false}];
-    //
-    // todoList.addTodo = function() {
-    //   todoList.todos.push({text:todoList.todoText, done:false});
-    //   todoList.todoText = '';
-    // };
-    //
-    // todoList.remaining = function() {
-    //   var count = 0;
-    //   angular.forEach(todoList.todos, function(todo) {
-    //     count += todo.done ? 0 : 1;
-    //   });
-    //   return count;
-    // };
-    //
-    // todoList.archive = function() {
-    //   var oldTodos = todoList.todos;
-    //   todoList.todos = [];
-    //   angular.forEach(oldTodos, function(todo) {
-    //     if (!todo.done) todoList.todos.push(todo);
-    //   });
-    // };
-  });
+  self.placeAt = function (row, column, player) {
+    var cell = self.board[row][column];
+    if (!cell.value) {
+      cell.value = player;
+      self.totalPlacedCells++;
+    }
+  };
+
+  return self;
+});
