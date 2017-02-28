@@ -1,0 +1,20 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "open index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cankei/tic-tac-toe.git"
+  },
+  "author": "Qi Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cankei/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/cankei/tic-tac-toe#readme",
+  "devDependencies": {}
+}
