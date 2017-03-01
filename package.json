@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "open index.html",
+    "start": "open www/index.html",
     "test": "./node_modules/karma/bin/karma start"
   },
   "repository": {
