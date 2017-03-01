@@ -8,7 +8,7 @@ angular.module('ticTacToeApp', ['tic-tac-toe-board-service']).controller('TicTac
 
   ticTacToe.restart = function () {
     TicTacToeBoardService.reset();
-    ticTacToe.board = TicTacToeBoardService.board();
+    ticTacToe.board = TicTacToeBoardService.getBoard();
   };
   ticTacToe.restart();
 

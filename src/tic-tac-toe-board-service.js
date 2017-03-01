@@ -4,7 +4,7 @@ angular.module('tic-tac-toe-board-service', []).factory('TicTacToeBoardService',
   var totalPlacedCells = 0;
 
   return {
-    board: function () {
+    getBoard: function () {
       return board;
     },
     getTotalPlacedCells: function () {
@@ -42,6 +42,7 @@ angular.module('tic-tac-toe-board-service', []).factory('TicTacToeBoardService',
       if (board[0][0].value && board[0][0].value === board[1][1].value && board[0][0].value === board[2][2].value)
         return board[0][0].value;
       if (board[0][2].value === board[1][1].value && board[0][2].value === board[2][0].value) return board[0][2].value;
+      return '';
     }
   };
 });
