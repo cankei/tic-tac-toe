@@ -15,9 +15,10 @@ angular.module('ticTacToeApp', ['tic-tac-toe-board-service']).controller('TicTac
   ticTacToe.placeAt = function (row, column, player) {
     TicTacToeBoardService.placeAt(row, column, player);
 
+    // set delay to make sure alert happens after the button click animation
     $timeout(function () {
       var winner = TicTacToeBoardService.checkWinner();
-      if (winner) alert("Winner is " + winner);
+      if (winner) alert("Winner is player " + winner);
       else if (TicTacToeBoardService.isFull()) alert("Draw game");
     }, 100);
   };

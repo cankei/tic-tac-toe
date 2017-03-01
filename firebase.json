@@ -1,11 +1,19 @@
 {
   "hosting": {
     "public": "www/",
-    "rewrites": [
+    "headers": [
       {
         "source": "**",
-        "destination": "/www/index.html"
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=60"
+          }
+        ]
       }
+    ],
+    "ignore": [
+      "**/.*"
     ]
   }
 }
