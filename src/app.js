@@ -1,4 +1,4 @@
-angular.module('ticTacToeApp', ['ticTacToeBoardService']).controller('TicTacToeController', function (TicTacToeBoardService, $timeout) {
+angular.module('ticTacToeApp', ['tic-tac-toe-board-service']).controller('TicTacToeController', function (TicTacToeBoardService, $timeout) {
   var ticTacToe = this;
 
   var PLAYERS = {

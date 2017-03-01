@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "open index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/karma/bin/karma start"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,12 @@
     "url": "https://github.com/cankei/tic-tac-toe/issues"
   },
   "homepage": "https://github.com/cankei/tic-tac-toe#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "angular": "^1.6.2",
+    "angular-mocks": "^1.6.2",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2"
+  }
 }

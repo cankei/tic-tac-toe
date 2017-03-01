@@ -1,5 +1,4 @@
-angular.module('ticTacToeBoardService', []).factory('TicTacToeBoardService', function () {
-  var self = this;
+angular.module('tic-tac-toe-board-service', []).factory('TicTacToeBoardService', function () {
   var SIZE = 3;
   var board = [];
   var totalPlacedCells = 0;
