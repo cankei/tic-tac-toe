@@ -1,5 +1,24 @@
-table button {
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background: #ECEFF1;
+    text-align: center;
+}
+
+.tic-tac-toe__board {
+    margin: auto;
+}
+
+.tic-tac-toe__cell {
     height: 50px;
     width: 50px;
     font-size: 20px;
+}
+
+.tic-tac-toe__action-button {
+    background: green;
+    font-size: 18px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    color: white;
 }

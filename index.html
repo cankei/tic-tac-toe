@@ -9,16 +9,18 @@
 <body>
 <h2>Tic-Tac-Toe</h2>
 <div ng-controller="TicTacToeController as ticTacToe">
-  <table>
+  <table class="tic-tac-toe__board">
     <tr ng-repeat="row in ticTacToe.board">
       <td ng-repeat="cell in row">
-        <button ng-click="ticTacToe.placeAt($parent.$index, $index, ticTacToe.getCurrentPlayer())">{{cell.value}}
+        <button class="tic-tac-toe__cell"
+                ng-click="ticTacToe.placeAt($parent.$index, $index, ticTacToe.getCurrentPlayer())">
+          {{cell.value}}
         </button>
       </td>
     </tr>
   </table>
   <h3>Next move is player {{ticTacToe.getCurrentPlayer()}}</h3>
-  <button ng-click="ticTacToe.restart()">Restart</button>
+  <button class="tic-tac-toe__action-button" ng-click="ticTacToe.restart()">Restart</button>
 </div>
 </body>
 </html>
