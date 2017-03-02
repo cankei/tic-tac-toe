@@ -12,6 +12,10 @@ angular.module('ticTacToeApp', ['tic-tac-toe-board-service']).controller('TicTac
   };
   ticTacToe.restart();
 
+  ticTacToe.hasEnded = function () {
+    return TicTacToeBoardService.isFull() || TicTacToeBoardService.checkWinner();
+  };
+
   ticTacToe.placeAt = function (row, column, player) {
     TicTacToeBoardService.placeAt(row, column, player);
 

@@ -12,6 +12,7 @@ body {
     height: 50px;
     width: 50px;
     font-size: 20px;
+    color: black;
 }
 
 .tic-tac-toe__action-button {

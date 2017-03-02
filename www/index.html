@@ -13,7 +13,8 @@
     <tr ng-repeat="row in ticTacToe.board">
       <td ng-repeat="cell in row">
         <button class="tic-tac-toe__cell"
-                ng-click="ticTacToe.placeAt($parent.$index, $index, ticTacToe.getCurrentPlayer())">
+                ng-click="ticTacToe.placeAt($parent.$index, $index, ticTacToe.getCurrentPlayer())"
+                ng-disabled="cell.value || ticTacToe.hasEnded()">
           {{cell.value}}
         </button>
       </td>
